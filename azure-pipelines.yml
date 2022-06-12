@@ -43,5 +43,5 @@ stages:
         arguments: '-f .'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
-        workingDirectory: '$(Build.SourcesDirectory)'
+        workingDirectory: '$(Build.SourcesDirectory)/k8sManifests'
         outputFormat: 'yaml'

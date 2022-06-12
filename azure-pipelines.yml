@@ -30,6 +30,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Dockerhub'
-        repository: 'python-tf-assesment'
+        repository: 'smekarthick/python-tf-assesment'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'

@@ -34,3 +34,14 @@ stages:
         repository: 'smekarthick/python-tf-assesment'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'k8s Dev'
+        namespace: 'default'
+        command: 'apply'
+        arguments: '-f .'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'
+        workingDirectory: '$(Build.SourcesDirectory)'
+        outputFormat: 'yaml'
